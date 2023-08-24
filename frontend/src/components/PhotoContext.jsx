@@ -17,4 +17,3 @@ export const PhotoProvider = ({ children }) => {
 export const usePhotoContext = () => {
     return useContext(PhotoContext);
 };
-
