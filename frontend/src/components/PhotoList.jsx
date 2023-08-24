@@ -4,6 +4,7 @@ import "../styles/PhotoList.scss";
 
 
 const sampleDataForPhotoList = [
+  
   {
     id: "1",
     location: {
