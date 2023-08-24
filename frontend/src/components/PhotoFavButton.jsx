@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useContext } from 'react';
+import React, { useCallback } from 'react';
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 import { usePhotoContext } from './PhotoContext'; // Assuming you have this file and the mentioned exports
