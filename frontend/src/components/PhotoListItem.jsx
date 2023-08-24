@@ -7,6 +7,7 @@ const PhotoListItem = ({ id, user, urls, location, click, isFavorite, onPhotoCli
   const imageSource = urls.regular;
 
   return (
+    
     <div className="photo-list-item" data-id={id} onClick={onPhotoClick}>
       <PhotoFavButton photoId={id} click={click}/>
       <img 
