@@ -15,6 +15,9 @@ const PhotoDetailsModal = ({ closeModal, photo, similarPhotos }) => {
       {/* Displaying the larger version of the selected photo */}
       <img src={photo.urls.full} alt={`Large view of photo taken in ${photo.location.city}, ${photo.location.country}`} className="photo-details-modal__image" />
 
+      {/* Adding a heading for similar photos */}
+      <h2 className="photo-details-modal__similar-heading">Similar Photos</h2>
+
       {/* Displaying similar photos */}
       <PhotoList photos={similarPhotos}  />
 
