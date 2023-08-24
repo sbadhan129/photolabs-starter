@@ -4,22 +4,15 @@ import PhotoList from '../components/PhotoList';
 import { usePhotoContext } from '../components/PhotoContext';  // Assuming you've set up this context
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, openModal }) => {
-  const { favorites, setFavorites } = usePhotoContext();
-console.log("favorites in home", favorites)
 
-  const setFavorite = (photoId) => {
-    if (favorites.includes(photoId)) {
-      setFavorites(prev => prev.filter(id => id !== photoId));
-    } else {
-      setFavorites(prev => [...prev, photoId]);
-    }
-  };
+const HomeRoute = ({ photos, topics, openModal, updateToFavPhotoIds }) => {
+  const { favorites } = usePhotoContext();
+console.log("favorites in home", favorites)
 
   return (
     <div className="home-route">
       <TopNavigation topics={topics} />
-      <PhotoList photos={photos} setFavorite={setFavorite} favorites={favorites} onPhotoClick={openModal} />
+      <PhotoList photos={photos} setFavorite={updateToFavPhotoIds} favorites={favorites} onPhotoClick={openModal} />
     </div>
   );
 };
