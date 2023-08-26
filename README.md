@@ -49,8 +49,11 @@ npm start
 ```
 
 ## Final Product
+The Home Page
 ![Screenshot](./docs/home.png)
 
+The Enhanced modal
 ![Screenshot](./docs/enhance.png)
 
+Liked Images
 ![Screenshot](./docs/liked.png)
