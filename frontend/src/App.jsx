@@ -11,7 +11,8 @@ const App = () => {
     setModalOpen, 
     setSelectedPhoto, 
     updateToFavPhotoIds, 
-    onClosePhotoDetailsModal 
+    onClosePhotoDetailsModal, 
+    fetchPhotosByTopic, 
   } = useApplicationData();
 
   // Filter out the currently selected photo to get a list of similar photos
@@ -29,7 +30,8 @@ const App = () => {
 
            // Define the function to open the modal and set the selected photo
           openModal={(photo) => { setSelectedPhoto(photo); setModalOpen(true); }}
-         updateToFavPhotoIds={updateToFavPhotoIds}
+         updateToFavPhotoIds={updateToFavPhotoIds} 
+         fetchPhotosByTopic = {fetchPhotosByTopic}
         />
 
          {/* Conditionally render the PhotoDetailsModal based on whether the modal should be open */}
