@@ -30,6 +30,7 @@ const sampleDataForTopicList =
     slug: "fashion"
     }
     ];
+    
 const TopicList = ({fetchPhotosByTopic}) => {
   return (
     <div className="top-nav-bar__topic-list">
