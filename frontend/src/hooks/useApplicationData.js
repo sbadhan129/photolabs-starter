@@ -7,7 +7,8 @@ const initialState = {
   selectedPhoto: null,
   favorites: [],
   photoData: [],
-  topicData: []
+  topicData: [],
+  selectedTopicId: null,
 };
 
 const ACTIONS = {
@@ -16,6 +17,7 @@ const ACTIONS = {
   UPDATE_FAVORITES: 'UPDATE_FAVORITES',
   SET_PHOTO_DATA: 'SET_PHOTO_DATA',
   SET_TOPIC_DATA: 'SET_TOPIC_DATA',
+  SET_SELECTED_TOPIC_ID: 'SET_SELECTED_TOPIC_ID',
 };
 
 
@@ -43,6 +45,9 @@ const applicationDataReducer = (state, action) => {
     case ACTIONS.SET_TOPIC_DATA:
       return { ...state, topicData: action.payload };
 
+      case ACTIONS.SET_SELECTED_TOPIC_ID:
+  return { ...state, selectedTopicId: action.topicId };
+
     default:
       throw new Error(`Unsupported action type: ${action.type}`);
   }
@@ -66,6 +71,10 @@ function useApplicationData() {
 
   const onClosePhotoDetailsModal = () => {
     setModalOpen(false);
+  };
+
+  const setSelectedTopicId = (topicId) => {
+    dispatch({ type: ACTIONS.SET_SELECTED_TOPIC_ID, topicId });
   };
 
   useEffect(() => {
@@ -98,6 +107,27 @@ function useApplicationData() {
     });
 }, []);
  
+useEffect(() => {
+  if (state.selectedTopicId) {
+    fetchPhotosByTopic(state.selectedTopicId);
+  }
+}, [state.selectedTopicId]);
+
+const fetchPhotosByTopic = (topicId) => {
+  fetch(`/api/topics/photos/${topicId}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch photos by topic.");
+      }
+      return response.json();
+    })
+    .then(photoData => {
+      dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: photoData });
+    })
+    .catch(error => {
+      console.error("There was a problem fetching photos by topic:", error);
+    });
+};
 
   return {
     state,
@@ -105,6 +135,8 @@ function useApplicationData() {
     setSelectedPhoto,
     updateToFavPhotoIds,
     onClosePhotoDetailsModal,
+    setSelectedTopicId,
+    fetchPhotosByTopic,
   };
 }
 
