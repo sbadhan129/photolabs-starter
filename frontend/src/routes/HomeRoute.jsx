@@ -6,7 +6,7 @@ import { usePhotoContext } from '../components/PhotoContext';  // Assuming you'v
 import '../styles/HomeRoute.scss';
 
 // Define the HomeRoute component
-const HomeRoute = ({ photos, topics, openModal, updateToFavPhotoIds }) => {
+const HomeRoute = ({ photos, topics, openModal, updateToFavPhotoIds, fetchPhotosByTopic }) => {
   const { favorites } = usePhotoContext();
 console.log("favorites in home", favorites)
 
@@ -14,7 +14,7 @@ console.log("favorites in home", favorites)
     <div className="home-route">
 
       {/* Render the TopNavigation component and pass down topics as props */}
-      <TopNavigation topics={topics} />
+      <TopNavigation topics={topics} fetchPhotosByTopic = {fetchPhotosByTopic}  />
       <PhotoList photos={photos} setFavorite={updateToFavPhotoIds} favorites={favorites} onPhotoClick={openModal} />
     </div>
   );
