@@ -54,7 +54,7 @@ The Home Page
 ![Screenshot](./docs/home.png)
 
 The Enhanced Modal
-![Screenshot](./docs/enhance.png)
+![Screenshot](./docs/enhanced.png)
 
 The Comparison in Modal
 ![Screenshot](./docs/comparison.png)
