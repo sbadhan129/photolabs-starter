@@ -7,9 +7,9 @@ const sampleDataForTopicListItem = {
   label: "Nature",
 };
 
-const TopicListItem = ({ label }) => {
+const TopicListItem = ({ label, fetchPhotosByTopic, id }) => {
   return (
-    <div className="topic-list__item">
+    <div className="topic-list__item" onClick={() => fetchPhotosByTopic(id)} >
       <h3 className="topic-label">{label}</h3>
     </div>
   );
