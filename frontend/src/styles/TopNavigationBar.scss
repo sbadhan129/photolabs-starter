@@ -11,10 +11,34 @@
 }
 
 .top-nav-bar__logo {
-  text-decoration: overline;
-  font-weight: 500;
-  font-size: 24px;
-  color: #060606;
-  text-underline-position: auto;
-  margin-left: 5px;
+    font-weight: 700;  
+    font-size: 26px;  
+    background: -webkit-linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
+    background: linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;  
+    text-underline-position: under;
+    margin-left: 5px;
+    letter-spacing: 1.5px;  
+    transition: transform 0.3s;  
+
+  
+  &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: -webkit-linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
+      background: linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
+      position: relative;
+      top: -5px;
+      margin-bottom: -5px;
+  }
+
+  
+  &:hover {
+      transform: scale(1.05);  
+      }
 }
+

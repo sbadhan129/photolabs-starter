@@ -1,7 +1,18 @@
 .top-nav-bar__topic-list {
   display: flex;
   flex-direction: row;
-  justify-content: start;
   align-items: center;
-  margin-right: -610px;
+  gap: 30px;  
+  padding: 1px 0; 
+  font-size: 1.2rem; 
+  font-weight: 500; 
+  background-color: #f8f8f8; 
+  border-bottom: 1px solid #e0e0e0; 
+  transition: background-color 0.3s ease; 
+
+  
+  > *:hover {
+    color: #08c7f7; 
+    cursor: pointer; 
+  }
 }
