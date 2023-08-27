@@ -6,7 +6,7 @@ import FavBadge from './FavBadge';
 import '../styles/TopNavigationBar.scss'
 
 // Functional component for the top navigation bar.
-const TopNavigation = () => {
+const TopNavigation = ({fetchPhotosByTopic}) => {
   const { favorites } = usePhotoContext();
  
 
@@ -24,7 +24,7 @@ const TopNavigation = () => {
     <div className="top-nav-bar">
       {/* Brand/logo for the application. */}
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList />
+      <TopicList fetchPhotosByTopic = {fetchPhotosByTopic} />
       <FavBadge isFavPhotoExist={displayAlert} />
     </div>
   )
