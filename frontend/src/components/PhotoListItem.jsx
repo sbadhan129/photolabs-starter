@@ -12,7 +12,7 @@ const PhotoListItem = ({ id, user, urls, location, click, isFavorite, onPhotoCli
 
   return (
     
-    <div className="photo-list-item" data-id={id} onClick={onPhotoClick}>
+    <div className="photo-list-item" data-id={id} onClick={() =>onPhotoClick && onPhotoClick({id, user, urls, location})}>
       
       {/* Favorite button to mark/unmark photo as favorite */}
       <PhotoFavButton photoId={id} click={click}/>
