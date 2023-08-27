@@ -53,7 +53,7 @@ npm start
 ```
 
 The Backend Server
-![Screenshot](./docs/server.png)
+![Screenshot](./docs/server2.png)
 
 
 ## Final Product
