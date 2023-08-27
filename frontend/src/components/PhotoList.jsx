@@ -2,7 +2,7 @@ import React from "react";
 import PhotoListItem from './PhotoListItem';
 import "../styles/PhotoList.scss";
 
-const PhotoList = ({ photos, setFavorite, favorites, onPhotoClick }) => {
+const PhotoList = ({ photos, favorites, onPhotoClick }) => {
   
    // Log the favorites for debugging purposes.
   console.log("favorites", favorites)
@@ -14,8 +14,7 @@ const PhotoList = ({ photos, setFavorite, favorites, onPhotoClick }) => {
             id={photo.id}
             user={photo.user}
             urls={photo.urls}
-            location={photo.location}
-            click={() => setFavorite(photo.id)} 
+            location={photo.location}  
             isFavorite={favorites?.includes(photo.id)}
             onPhotoClick={() => onPhotoClick(photo)}
         />
