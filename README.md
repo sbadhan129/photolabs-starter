@@ -39,6 +39,9 @@ Install dependencies with `npm install` in each respective `/frontend` and `/bac
 cd frontend
 npm start
 ```
+The Frontend Server
+![Screenshot](./docs/server1.png)
+
 
 ## [Backend] Running Backend Servier
 
@@ -48,6 +51,10 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+
+The Backend Server
+![Screenshot](./docs/server.png)
+
 
 ## Final Product
 The Home Page
