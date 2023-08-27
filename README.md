@@ -13,6 +13,7 @@ PhotoLabs is a dynamic React-based single-page application that offers a seamles
 
 ## Features 
 - Dynamic Photo Viewing
+- Image Comparison in Modal
 - Explore Topics
 - Enhanced Photo Interaction
 - Personalized Experience
@@ -52,8 +53,11 @@ npm start
 The Home Page
 ![Screenshot](./docs/home.png)
 
-The Enhanced modal
+The Enhanced Modal
 ![Screenshot](./docs/enhance.png)
+
+The Comparison in Modal
+![Screenshot](./docs/comparison.png)
 
 Liked Images
 ![Screenshot](./docs/liked.png)
