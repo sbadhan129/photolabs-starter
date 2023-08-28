@@ -4,26 +4,35 @@
   justify-content: space-between;
   list-style-type: none;
   margin: 20px; 
-    padding: 20px;
+  padding: 20px;
   background-color: #f8f8f8; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-  
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   
   &:hover {
     background-color: #f0f0f0;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   }
+
+  // Dark mode styles
+  body.dark-mode & {
+    background-color: #444;
+
+    &:hover {
+      background-color: #333;
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); // Light shadow for dark mode
+    }
+  }
 }
 
 .photo-list-item { 
-    margin: 10px;
+  margin: 10px;
   transition: transform 0.3s; 
-    
+
   &:hover {
     transform: scale(1.05); 
-        z-index: 1; 
-    }
+    z-index: 1; 
+  }
 }
 
 .photo-list:after {
@@ -31,4 +40,5 @@
   flex: 0 1 30%;
   margin: 5px;
   background: linear-gradient(45deg, #FFC3A0, #FFAFBD); 
+
 }

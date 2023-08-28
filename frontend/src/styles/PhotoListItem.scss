@@ -35,7 +35,13 @@
   margin-top: 10px;
   font-weight: 700;
   font-size: 12px;
+  color: black; // Default color for light mode
   margin-left: 8px;
+
+  // For dark mode
+  body.dark-mode & {
+    color: rgb(221, 245, 5);
+  }
 }
 
 .photo-list-user-location {

@@ -1,3 +1,4 @@
+// Current styles for the top navigation bar
 .top-nav-bar {
   display: flex;
   flex-direction: row;
@@ -10,10 +11,10 @@
   height: 72px;
 }
 
+// Logo styles within the top navigation bar
 .top-nav-bar__logo {
-    font-weight: 700;  
+    font-weight: bold;  
     font-size: 26px;  
-    background: -webkit-linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
     background: linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
     -webkit-background-clip: text;
     background-clip: text;
@@ -23,22 +24,83 @@
     letter-spacing: 1.5px;  
     transition: transform 0.3s;  
 
-  
   &::before {
       content: "";
       display: block;
       width: 100%;
       height: 2px;
-      background: -webkit-linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
       background: linear-gradient(45deg, #FF5733, #FFC300, #33FF57, #33D2FF, #8533FF);  
       position: relative;
       top: -5px;
       margin-bottom: -5px;
   }
 
-  
   &:hover {
       transform: scale(1.05);  
-      }
+  }
 }
 
+// Dark mode styling for the body element
+body.dark-mode {
+    background-color: #333;  
+    color: #020aec;             
+}
+
+
+body.dark-mode {
+    .top-nav-bar {
+        background-color: #444;  
+    }
+
+    
+}
+
+.button-toggle-mode {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #FF5733, #FFC300);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+
+  &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: -1;
+      transform: skewX(-15deg) translateX(-150%);
+      transition: all 0.4s ease;
+  }
+
+  &:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #FFC300, #FF5733);
+
+      &::before {
+          transform: skewX(-15deg) translateX(150%);
+      }
+  }
+
+  &:active {
+      transform: scale(0.98);
+      background: linear-gradient(90deg, #FF5733, #FFC300);
+  }
+
+  &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.4);
+  }
+}
