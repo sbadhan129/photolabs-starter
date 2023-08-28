@@ -16,7 +16,7 @@ const App = () => {
   } = useApplicationData();
 
   // Filter out the currently selected photo to get a list of similar photos
-  const similarPhotos = state.photoData.filter(p => p.id !== state.selectedPhoto?.id);
+  const similarPhotos = state.selectedPhoto?.similar_photos || [];
 
   return (
      // Wrap the application within the PhotoProvider to make photo-related data and functions accessible to child components
