@@ -8,8 +8,6 @@ import '../styles/HomeRoute.scss';
 // Define the HomeRoute component
 const HomeRoute = ({ photos, topics, openModal, updateToFavPhotoIds, fetchPhotosByTopic }) => {
   const { favorites } = usePhotoContext();
-console.log("favorites in home", favorites)
-
   return (
     <div className="home-route">
 
