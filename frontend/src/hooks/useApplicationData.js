@@ -96,8 +96,7 @@ function useApplicationData() {
   // Use Promise.all to execute both promises
   Promise.all([fetchPhotos, fetchTopics])
     .then(([photoData, topicData]) => {
-      console.log(photoData);  // Logging photo data
-      console.log(topicData);  // Logging topic data
+    
 
       dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: photoData });
       dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: topicData });
